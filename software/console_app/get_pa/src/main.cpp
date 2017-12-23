@@ -386,6 +386,8 @@ static float GetPressure (void)
     rx_buf[rx_len] = 0;
 
     f = atof ((char *)rx_buf);
+    
+    f = f / 100;
 
     return f;
 }

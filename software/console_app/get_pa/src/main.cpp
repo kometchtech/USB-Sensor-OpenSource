@@ -377,6 +377,9 @@ static float GetHumidity (void)
 
     f = atof ((char *)rx_buf);
 
+    // 取得する値の修正
+    f = f + 18;
+
     return f;
 }
 
@@ -433,6 +436,9 @@ static float GetPressure (void)
     rx_buf[rx_len] = 0;
 
     f = atof ((char *)rx_buf);
+
+    // 取得する値の修正
+    f = f /100;
 
     return f;
 }
